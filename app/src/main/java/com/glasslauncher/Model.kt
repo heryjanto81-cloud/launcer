@@ -82,10 +82,10 @@ object Categorizer {
         )
     )
 
+    @Suppress("DEPRECATION")
     fun categorize(info: ApplicationInfo): AppCategory {
         val pkg = info.packageName.lowercase()
 
-        @Suppress("DEPRECATION")
         if ((info.flags and ApplicationInfo.FLAG_IS_GAME) != 0) return AppCategory.GAMES
 
         for ((category, keys) in rules) {
